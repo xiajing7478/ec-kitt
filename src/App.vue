@@ -17,10 +17,14 @@ import HelloWorld from '@/components/HelloWorld.vue'
     </div>
   </header>
   <el-button type="primary">主要按钮</el-button> -->
+  <h1 class="test">test css</h1>
   <RouterView />
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+.test {
+  color: $warnColor;
+}
 header {
   line-height: 1.5;
   max-height: 100vh;
