@@ -11,7 +11,7 @@ const categoryStore = useCategoryStore()
 const data = ref([])
 onMounted(async () => {
   await categoryStore.getCategrotList()
-  data.value = categoryStore.categrotList
+  // data.value = categoryStore.categrotList
 })
 </script>
 <template>
