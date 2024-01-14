@@ -26,7 +26,7 @@ const { elementX, elementY, isOutside } = useMouseInElement(target)
 watch([elementX, elementY, isOutside], ([x, y, isOutside]) => {
   if (isOutside.val) return
   // 有效范围内控制滑块距离
-  console.log(x, y, isOutside)
+  // console.log(x, y, isOutside)
   // 横向
   if (elementX.value > 100 && elementX.value < 300) {
     left.value = elementX.value - 100
