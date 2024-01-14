@@ -2,11 +2,11 @@
 defineProps({
   title: {
     type: String,
-    default: 'a'
+    default: ''
   },
   subTitle: {
     type: String,
-    default: 'B'
+    default: ''
   }
 })
 </script>
