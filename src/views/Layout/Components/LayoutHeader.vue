@@ -9,7 +9,7 @@
 //   const res = await getCategoryAPI()
 //   categroyList.value = res.result
 // })
-
+import HeaderCart from '@/views/Layout/Components/HeaderCart.vue'
 import { useCategoryStore } from '@/stores/category'
 
 const categoryStore = useCategoryStore()
@@ -41,6 +41,7 @@ const categoryStore = useCategoryStore()
         <input type="text" placeholder="搜一搜" />
       </div>
       <!-- 头部购物车 -->
+      <HeaderCart />
     </div>
   </header>
 </template>

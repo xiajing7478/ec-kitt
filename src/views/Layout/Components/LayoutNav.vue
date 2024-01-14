@@ -1,18 +1,33 @@
 <script setup>
-import { ref } from 'vue'
-const isLogin = ref(false)
+import { storeToRefs } from 'pinia'
+import { useUserStore } from '@/stores/user'
+import { useRouter } from 'vue-router'
+const userStore = useUserStore()
+const { userInfo } = storeToRefs(userStore)
+const router = useRouter()
+const logout = () => {
+  userStore.logOutAction()
+  router.replace({ path: '/login' })
+}
 </script>
 
 <template>
   <nav class="app-topnav">
     <div class="container">
       <ul>
-        <template v-if="isLogin">
+        <template v-if="userInfo.token">
           <li>
-            <a href="javascript:void(0)"><i class="iconfont icon-user"></i>周杰伦</a>
+            <a href="javascript:void(0)"
+              ><i class="iconfont icon-user"></i>{{ userInfo.account }}</a
+            >
           </li>
           <li>
-            <el-popconfirm title="确认退出吗?" confirm-button-text="确认" cancel-button-text="取消">
+            <el-popconfirm
+              @confirm="logout"
+              title="确认退出吗?"
+              confirm-button-text="确认"
+              cancel-button-text="取消"
+            >
               <template #reference>
                 <a href="javascript:;">退出登录</a>
               </template>

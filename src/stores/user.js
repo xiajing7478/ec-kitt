@@ -9,7 +9,10 @@ export const useUserStore = defineStore(
       const res = await login({ account, password })
       userInfo.value = res.result
     }
-    return { userInfo, loginAction }
+    const logOutAction = () => {
+      userInfo.value = {}
+    }
+    return { userInfo, loginAction, logOutAction }
   },
   {
     persist: true
