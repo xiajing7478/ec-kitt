@@ -23,6 +23,16 @@ const router = createRouter({
           path: '/category/:id',
           name: 'category',
           component: () => import('@/views/Category/index.vue')
+        },
+        {
+          path: '/category/sub/:id',
+          name: 'subCategory',
+          component: () => import('@/views/SubCategroy/index.vue')
+        },
+        {
+          path: '/detail/:id',
+          name: 'detail',
+          component: () => import('@/views/Detail/index.vue')
         }
       ]
     },
@@ -44,7 +54,12 @@ const router = createRouter({
     //   // which is lazy-loaded when the route is visited.
     //   component: () => import('../views/AboutView.vue')
     // }
-  ]
+  ],
+  scrollBehavior() {
+    return {
+      top: 0
+    }
+  }
 })
 
 export default router
