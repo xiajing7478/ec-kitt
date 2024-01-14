@@ -30,10 +30,10 @@ const categoryStore = useCategoryStore()
       </h1>
       <ul class="app-header-nav">
         <li class="home">
-          <RouterLink to="/">首页</RouterLink>
+          <RouterLink exact-active-class="active" to="/">首页</RouterLink>
         </li>
         <li v-for="nav in categoryStore.categrotList || []" :key="nav.id">
-          <RouterLink :to="`/category/${nav.id}`">{{ nav.name }}</RouterLink>
+          <RouterLink active-class="active" :to="`/category/${nav.id}`">{{ nav.name }}</RouterLink>
         </li>
       </ul>
       <div class="search">

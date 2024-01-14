@@ -18,6 +18,8 @@ onMounted(async () => {
   <layout-fixed />
   <layout-nav />
   <layout-header :data="data" />
+  <!-- 添加key，破坏复用机制 强制销毁重建-->
+  <!-- <router-view :key="$route.fullPath" /> -->
   <router-view />
   <layout-footer />
 </template>
