@@ -20,8 +20,6 @@ const categoryStore = useCategoryStore()
 //     default: () => []
 //   }
 // })
-
-// console.log(props.data)
 </script>
 
 <template>
@@ -35,7 +33,7 @@ const categoryStore = useCategoryStore()
           <RouterLink to="/">首页</RouterLink>
         </li>
         <li v-for="nav in categoryStore.categrotList || []" :key="nav.id">
-          <RouterLink to="/">{{ nav.name }}</RouterLink>
+          <RouterLink :to="`/category/${nav.id}`">{{ nav.name }}</RouterLink>
         </li>
       </ul>
       <div class="search">
