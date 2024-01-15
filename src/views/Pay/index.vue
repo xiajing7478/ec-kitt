@@ -10,7 +10,6 @@ const getPayInfo = async () => {
   const res = await getOrderAPI(route.query.id)
   payInfo.value = res.result
   const { timeLeftStr } = useCountDown(payInfo.value.countdown)
-  console.log(timeLeftStr)
   formatTime.value = timeLeftStr
 }
 onMounted(() => getPayInfo())
