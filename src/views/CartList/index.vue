@@ -88,7 +88,11 @@ const checkAll = (selected) => {
           <span class="red">¥ {{ cartStore.selectedPrice.toFixed(2) }} </span>
         </div>
         <div class="total">
-          <el-button :disabled="cartStore.selectedCount <= 0" size="large" type="primary"
+          <el-button
+            @click="$router.push('/settlement')"
+            :disabled="cartStore.selectedCount <= 0"
+            size="large"
+            type="primary"
             >下单结算</el-button
           >
         </div>
