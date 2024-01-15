@@ -1,12 +1,15 @@
 <script setup>
 import { storeToRefs } from 'pinia'
 import { useUserStore } from '@/stores/user'
+import { useCartStore } from '@/stores/cartStore'
 import { useRouter } from 'vue-router'
 const userStore = useUserStore()
+const cartStore = useCartStore()
 const { userInfo } = storeToRefs(userStore)
 const router = useRouter()
 const logout = () => {
   userStore.logOutAction()
+  cartStore.clearCart()
   router.replace({ path: '/login' })
 }
 </script>
