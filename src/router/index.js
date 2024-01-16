@@ -55,6 +55,11 @@ const router = createRouter({
           component: () => import('@/views/Pay/payBack.vue')
         },
         {
+          path: '/sku',
+          name: 'sku',
+          component: () => import('@/views/Sku/index.vue')
+        },
+        {
           path: '/member',
           name: 'member',
           component: () => import('@/views/Member/index.vue'),

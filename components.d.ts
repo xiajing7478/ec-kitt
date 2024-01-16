@@ -35,6 +35,7 @@ declare module 'vue' {
     ImageView: typeof import('./src/components/ImageView/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Sku: typeof import('./src/components/Sku/index.vue')['default']
     TheWelcome: typeof import('./src/components/TheWelcome.vue')['default']
     WelcomeItem: typeof import('./src/components/WelcomeItem.vue')['default']
     XtxSku: typeof import('./src/components/XtxSku/index.vue')['default']
